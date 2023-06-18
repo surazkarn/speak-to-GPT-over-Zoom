@@ -1,0 +1,34 @@
+{
+  "name": "speak-to-gpt-over-zoom",
+  "version": "1.0.0",
+  "description": "A bot which can join a Zoom meeting, interprets verbal input from participants, and responds verbally using GPT.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surazkarn/speak-to-GPT-over-Zoom.git"
+  },
+  "author": "surazkarn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surazkarn/speak-to-GPT-over-Zoom/issues"
+  },
+  "homepage": "https://github.com/surazkarn/speak-to-GPT-over-Zoom#readme",
+  "dependencies": {
+    "@google-cloud/speech": "^5.5.0",
+    "axios": "^1.4.0",
+    "discord-tts": "^1.2.2",
+    "dot": "^1.1.3",
+    "env": "^0.0.2",
+    "express": "^4.18.2",
+    "googleapis": "^118.0.0",
+    "node-mic-record": "^0.0.1",
+    "node-record-lpcm16": "^1.0.1",
+    "nodemon": "^2.0.22",
+    "play-sound": "^1.1.5",
+    "zoomus": "^0.1.4"
+  }
+}

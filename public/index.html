@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zoom Integration</title>
+  <script src="/public/script.js"></script>
+</head>
+<body>
+  <h1>Zoom Integration</h1>
+  <label for="meetingLink">Meeting Link:</label>
+  <input type="text" id="meetingLink" placeholder="Enter meeting link">
+  <button id="joinMeetingBtn">Join Meeting</button>
+
+  <div id="message"></div>
+
+  <script>
+    document.getElementById('joinMeetingBtn').addEventListener('click', async () => {
+      const meetingLink = document.getElementById('meetingLink').value;
+      
+      const response = await fetch('/join-meeting', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ meetingLink })
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        document.getElementById('message').textContent = 'Successfully joined the Zoom meeting';
+      } else {
+        document.getElementById('message').textContent = result.error || 'Failed to join the Zoom meeting';
+      }
+    });
+  </script>
+</body>
+</html>
